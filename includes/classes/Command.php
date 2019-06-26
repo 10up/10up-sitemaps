@@ -59,8 +59,30 @@ class Command extends WP_CLI_Command {
 
 		$urls = [];
 
+		$homepage_url = [
+			'url'      => home_url(),
+			'modified' => time(),
+		];
+
+		$homepage_url = apply_filters( 'tenup_sitemaps_index_homepage', $homepage_url );
+
+		if ( ! empty( $homepage_url ) ) {
+			$urls[] = $homepage_url;
+		}
+
 		foreach ( $post_types as $post_type ) {
 			$offset = 0;
+
+			$post_type_archive_url = [
+				'url'      => get_post_type_archive_link( $post_type ),
+				'modified' => time(),
+			];
+
+			$post_type_archive_url = apply_filters( 'tenup_sitemaps_index_post_type_archive', $post_type_archive_url, $post_type );
+
+			if ( ! empty( $post_type_archive_url ) ) {
+				$urls[] = $post_type_archive_url;
+			}
 
 			while ( true ) {
 				WP_CLI::debug( 'Processing post type `' . $post_type . '` from offset ' . $offset );
@@ -189,6 +211,10 @@ class Command extends WP_CLI_Command {
 				}
 			}
 		}
+
+		/**
+		 * Todo: Add author archives
+		 */
 
 		/**
 		 * Break up content into manageable options that Memcached can handle. Targeting ~100 KB for each option.
