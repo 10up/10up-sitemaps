@@ -6,7 +6,7 @@ This is a simple sitemap plugin meant to run at scale. Sitemaps are only updated
 
 1. Install the plugin.
 2. Run the WP-CLI command: `wp tenup-sitemaps generate`
-3. Add WP-CLI command to cron job.
+3. Add WP-CLI command to cron job. For multisite, add a command for each site in the network.
 
 You can pass `--range` to the `generate` command to only index content within a certain age range. `wp tenup-sitemaps generate --range=12` would only index content created/updated within the last 12 months.
 
