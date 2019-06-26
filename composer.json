@@ -1,0 +1,25 @@
+{
+  "name": "10up/tenup--sitemaps",
+  "description": "10up Sitemaps",
+  "authors": [
+    {
+      "name": "Taylor Lovett",
+      "email": "taylor.lovett@10up.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TenUpScaffold\\": "includes/classes/"
+    }
+  },
+  "require-dev": {
+    "10up/phpcs-composer": "dev-master"
+  },
+  "scripts": {
+    "lint": "phpcs .",
+    "lint-fix": "phpcbf ."
+  }
+}
