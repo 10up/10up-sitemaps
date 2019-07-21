@@ -8,7 +8,8 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "petenelson/progress-estimator": "^1.0"
   },
   "autoload": {
     "psr-4": {

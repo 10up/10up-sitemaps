@@ -27,8 +27,11 @@ class Command extends WP_CLI_Command {
 	 * [--type=<range>]
 	 * : Range of posts to include. Either 'all' or a number of months.
 	 *
+	 * [--noprogress]
+	 * : Disables the progress list/estimator
+	 *
 	 * @subcommand generate
-	 * @synopsis [--range]
+	 * @synopsis [--range] [--noprogress]
 	 * @param array $args Positional CLI args.
 	 * @param array $assoc_args Associative CLI args.
 	 */
@@ -70,6 +73,22 @@ class Command extends WP_CLI_Command {
 			$urls[] = $homepage_url;
 		}
 
+		$estimator = false;
+		$i         = 0;
+		$count     = 0;
+
+		if ( class_exists( '\PHPEstimator\ProgressEstimator' ) && ! isset( $assoc_args['noprogress'] ) ) {
+
+			WP_CLI::line( 'Getting post count...' );
+
+			// Get a count of total number of posts.
+			$post_types_in = "('" . join( "', '", array_map( 'esc_sql', $post_types ) ) . "')";
+
+			$count = absint( $wpdb->get_var( $wpdb->prepare( "SELECT count(ID) FROM {$wpdb->prefix}posts WHERE post_status = 'publish' AND post_type in {$post_types_in} AND post_date_gmt >= '%s' ORDER BY post_date_gmt", $range ) ) );
+
+			$estimator = new \PHPEstimator\ProgressEstimator( $count );
+		}
+
 		foreach ( $post_types as $post_type ) {
 			$offset = 0;
 
@@ -94,9 +113,11 @@ class Command extends WP_CLI_Command {
 				}
 
 				foreach ( $results as $result ) {
+					$permalink = get_permalink( $result['ID'] );
+
 					$url = [
 						'ID'       => (int) $result['ID'],
-						'url'      => get_permalink( $result['ID'] ),
+						'url'      => $permalink,
 						'modified' => strtotime( $result['post_date_gmt'] ),
 					];
 
@@ -149,8 +170,36 @@ class Command extends WP_CLI_Command {
 
 					$url = apply_filters( 'tenup_sitemaps_index_post', $url, $result['ID'], $post_type );
 
+					$i++;
+
 					if ( ! empty( $url ) ) {
 						$urls[] = $url;
+
+						if ( ! empty( $estimator ) ) {
+							$estimator->tick();
+							\WP_CLI::success(
+								sprintf(
+									'[%d/%d] (%s) %s ',
+									$i,
+									$count,
+									$estimator->formatTime( $estimator->timeLeft() ),
+									$permalink
+								)
+							);
+						}
+					} else {
+						if ( ! empty( $estimator ) ) {
+							$estimator->tick();
+							\WP_CLI::warning(
+								sprintf(
+									'[%d/%d] (%s) %s ',
+									$i,
+									$count,
+									$estimator->formatTime( $estimator->timeLeft() ),
+									$permalink
+								)
+							);
+						}
 					}
 				}
 
