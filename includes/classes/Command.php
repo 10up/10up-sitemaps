@@ -204,6 +204,7 @@ class Command extends WP_CLI_Command {
 				}
 
 				$offset += $per_page;
+				$this->stop_the_insanity();
 			}
 		}
 
@@ -284,5 +285,36 @@ class Command extends WP_CLI_Command {
 		}
 
 		WP_CLI::success( 'Sitemap generated. ' . count( $urls ) . ' urls included.' );
+	}
+
+	/**
+	 * Clear all of the caches for memory management
+	 */
+	private function stop_the_insanity() {
+		/**
+		 * @var \WP_Object_Cache $wp_object_cache
+		 * @var \wpdb $wpdb
+		 */
+		global $wpdb, $wp_object_cache;
+
+		$one_hundred_mb = 104857600;
+		if ( memory_get_usage() <= $one_hundred_mb ) {
+			return;
+		}
+
+		$wpdb->queries = array();
+
+		if ( is_object( $wp_object_cache ) ) {
+			$wp_object_cache->group_ops = array();
+			$wp_object_cache->stats = array();
+			$wp_object_cache->memcache_debug = array();
+			$wp_object_cache->cache = array();
+
+			if ( method_exists( $wp_object_cache, '__remoteset' ) ) {
+				$wp_object_cache->__remoteset(); // important
+			}
+		}
+
+		gc_collect_cycles();
 	}
 }
