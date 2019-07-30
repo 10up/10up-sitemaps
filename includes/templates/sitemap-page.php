@@ -9,7 +9,9 @@ header( 'Content-type: application/xml; charset=UTF-8' );
 
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 
-$links = get_option( 'tenup_sitemaps_page_' . get_query_var( 'sitemap-page' ) );
+$sitemap_page = get_query_var( 'sitemap-page' );
+
+$links = apply_filters( 'tenup_sitemaps_page_links', get_option( 'tenup_sitemaps_page_' . $sitemap_page ), $sitemap_page );
 ?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
