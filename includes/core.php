@@ -44,8 +44,6 @@ function broken_sitemap_404() {
  */
 function load_sitemap_template( $template ) {
 
-
-
 	if ( 'true' === get_query_var( 'sitemap' ) ) {
 		if ( ! Utils\sitemap_setup() ) {
 			return $template;
