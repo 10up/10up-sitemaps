@@ -21,6 +21,7 @@ function setup() {
 	add_action( 'init', __NAMESPACE__ . '\create_rewrites' );
 	add_filter( 'posts_pre_query', __NAMESPACE__ . '\disable_main_query_for_sitemap_xml', 10, 2 );
 	add_action( 'wp', __NAMESPACE__ . '\broken_sitemap_404' );
+	add_filter( 'robots_txt', __NAMESPACE__ . '\add_sitemap_robots_txt' );
 }
 
 /**
@@ -42,6 +43,8 @@ function broken_sitemap_404() {
  * @return string
  */
 function load_sitemap_template( $template ) {
+
+
 
 	if ( 'true' === get_query_var( 'sitemap' ) ) {
 		if ( ! Utils\sitemap_setup() ) {
@@ -101,4 +104,16 @@ function disable_canonical_redirects_for_sitemap_xml( $redirect_url, $requested_
 	}
 
 	return $redirect_url;
+}
+
+/**
+ * Add the sitemap URL to robots.txt
+ *
+ * @param string $output Robots.txt output.
+ * @return string
+ */
+function add_sitemap_robots_txt( $output ) {
+	$url = site_url( '/sitemap.xml' );
+	$output .= "Sitemap: {$url}\n";
+	return $output;
 }
