@@ -26,10 +26,6 @@ $links = get_option( 'tenup_sitemaps_page_' . get_query_var( 'sitemap-page' ) );
 
 			<lastmod><?php echo esc_html( date( 'Y-m-d', $link['modified'] ) ); ?></lastmod>
 
-			<changefreq><?php echo esc_html( $link['change_frequency'] ); ?></changefreq>
-
-			<priority><?php echo esc_html( $link['priority'] ); ?></priority>
-
 			<?php if ( ! empty( $link['images'] ) ) : ?>
 				<?php foreach ( $link['images'] as $image ) : ?>
 					<image:image>
