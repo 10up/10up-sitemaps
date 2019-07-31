@@ -23,12 +23,6 @@ function sitemap_setup() {
 		return false;
 	}
 
-	for ( $i = 1; $i <= (int) $pages; $i++ ) {
-		if ( empty( get_option( 'tenup_sitemaps_page_' . $i ) ) ) {
-			return false;
-		}
-	}
-
 	return true;
 }
 
