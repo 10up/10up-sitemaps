@@ -42,6 +42,8 @@ class Command extends WP_CLI_Command {
 
 		$per_page = 500;
 
+		$urls_per_page = apply_filters( 'tenup_sitemaps_urls_per_page', 200 );
+
 		$args = [
 			'public' => true,
 		];
@@ -71,22 +73,6 @@ class Command extends WP_CLI_Command {
 
 		if ( ! empty( $homepage_url ) ) {
 			$urls[] = $homepage_url;
-		}
-
-		$estimator = false;
-		$i         = 0;
-		$count     = 0;
-
-		if ( class_exists( '\PHPEstimator\ProgressEstimator' ) && ! isset( $assoc_args['noprogress'] ) ) {
-
-			WP_CLI::line( 'Getting post count...' );
-
-			// Get a count of total number of posts.
-			$post_types_in = "('" . join( "', '", array_map( 'esc_sql', $post_types ) ) . "')";
-
-			$count = absint( $wpdb->get_var( $wpdb->prepare( "SELECT count(ID) FROM {$wpdb->prefix}posts WHERE post_status = 'publish' AND post_type in {$post_types_in} AND post_date_gmt >= '%s' ORDER BY post_date_gmt", $range ) ) );
-
-			$estimator = new \PHPEstimator\ProgressEstimator( $count );
 		}
 
 		foreach ( $post_types as $post_type ) {
@@ -170,36 +156,24 @@ class Command extends WP_CLI_Command {
 
 					$url = apply_filters( 'tenup_sitemaps_index_post', $url, $result['ID'], $post_type );
 
-					$i++;
-
 					if ( ! empty( $url ) ) {
 						$urls[] = $url;
 
-						if ( ! empty( $estimator ) ) {
-							$estimator->tick();
-							\WP_CLI::success(
-								sprintf(
-									'[%d/%d] (%s) %s ',
-									$i,
-									$count,
-									$estimator->formatTime( $estimator->timeLeft() ),
-									$permalink
-								)
-							);
-						}
+						\WP_CLI::line(
+							sprintf(
+								'%s (%d) added to page %d.',
+								$permalink,
+								count( $urls ),
+								ceil( count( $urls ) / $urls_per_page )
+							)
+						);
 					} else {
-						if ( ! empty( $estimator ) ) {
-							$estimator->tick();
-							\WP_CLI::warning(
-								sprintf(
-									'[%d/%d] (%s) %s ',
-									$i,
-									$count,
-									$estimator->formatTime( $estimator->timeLeft() ),
-									$permalink
-								)
-							);
-						}
+						\WP_CLI::warning(
+							sprintf(
+								'Could not add %s.',
+								$permalink
+							)
+						);
 					}
 
 					$this->stop_the_insanity();
@@ -255,6 +229,22 @@ class Command extends WP_CLI_Command {
 
 						if ( ! empty( $url ) ) {
 							$urls[] = $url;
+
+							\WP_CLI::line(
+								sprintf(
+									'%s (%d) added to page %d.',
+									$permalink,
+									count( $urls ),
+									ceil( count( $urls ) / $urls_per_page )
+								)
+							);
+						} else {
+							\WP_CLI::warning(
+								sprintf(
+									'Could not add %s.',
+									$permalink
+								)
+							);
 						}
 
 						$this->stop_the_insanity();
@@ -273,8 +263,6 @@ class Command extends WP_CLI_Command {
 		 * Break up content into manageable options that Memcached can handle. Targeting ~100 KB for each option.
 		 */
 
-		$urls_per_page = apply_filters( 'tenup_sitemaps_urls_per_page', 200 );
-
 		$total_pages = ceil( count( $urls ) / $urls_per_page );
 
 		update_option( 'tenup_sitemaps_total_pages', (int) $total_pages, false );
@@ -287,7 +275,7 @@ class Command extends WP_CLI_Command {
 			update_option( 'tenup_sitemaps_page_' . $i, $data, false );
 		}
 
-		WP_CLI::success( 'Sitemap generated. ' . count( $urls ) . ' urls included.' );
+		WP_CLI::success( 'Sitemap generated. ' . count( $urls ) . ' urls included. ' . $total_pages . ' pages created.' );
 	}
 
 	/**
