@@ -26,6 +26,13 @@ function sitemap_setup() {
 	return true;
 }
 
+function prepare_valid_xml( $string ) {
+	$string = html_entity_decode( $string );
+	$string = strip_tags( $string );
+
+	return trim( $string );
+}
+
 /**
  * Prepare an image for sitemap storage
  *
@@ -40,8 +47,8 @@ function prepare_sitemap_image( $id ) {
 	return [
 		'ID'    => $id,
 		'url'   => $src,
-		'alt'   => $alt,
-		'title' => $title,
+		'alt'   => prepare_valid_xml( $alt ),
+		'title' => prepare_valid_xml( $title ),
 	];
 }
 
