@@ -3,7 +3,7 @@
  * Plugin Name: 10up Sitemaps
  * Plugin URI:  http://10up.com
  * Description: Simple sitemap plugin
- * Version:     0.1.0
+ * Version:     1.0
  * Author:      Taylor Lovett, 10up
  * Author URI:  http://10up.com
  * License:     GPLv2+
