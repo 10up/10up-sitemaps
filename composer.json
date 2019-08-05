@@ -1,6 +1,7 @@
 {
   "name": "10up/tenup-sitemaps",
   "description": "10up Sitemaps",
+  "type": "wordpress-plugin",
   "authors": [
     {
       "name": "Taylor Lovett",
