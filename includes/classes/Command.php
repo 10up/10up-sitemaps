@@ -205,9 +205,11 @@ class Command extends WP_CLI_Command {
 					}
 
 					foreach ( $results as $result ) {
+						$permalink = get_term_link( (int) $result['term_id'] );
+
 						$url = [
 							'ID'       => (int) $result['term_id'],
-							'url'      => get_term_link( (int) $result['term_id'] ),
+							'url'      => $permalink,
 							'modified' => time(),
 						];
 
