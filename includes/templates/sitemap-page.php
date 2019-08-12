@@ -20,6 +20,11 @@ if ( empty( $links ) ) {
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 	<?php foreach ( $links as $link ) : ?>
+		<?php
+		if ( empty( $link['url'] ) ) {
+			continue;
+		}
+		?>
 		<url>
 
 			<loc><?php echo esc_html( $link['url'] ); ?></loc>

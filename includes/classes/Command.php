@@ -156,7 +156,7 @@ class Command extends WP_CLI_Command {
 
 					$url = apply_filters( 'tenup_sitemaps_index_post', $url, $result['ID'], $post_type );
 
-					if ( ! empty( $url ) ) {
+					if ( ! empty( $url ) && ! empty( $url['url'] ) ) {
 						$urls[] = $url;
 
 						\WP_CLI::line(
@@ -229,7 +229,7 @@ class Command extends WP_CLI_Command {
 
 						$url = apply_filters( 'tenup_sitemaps_index_term', $url, $result['term_id'], $taxonomy );
 
-						if ( ! empty( $url ) ) {
+						if ( ! empty( $url ) && ! empty( $url ) ) {
 							$urls[] = $url;
 
 							\WP_CLI::line(
