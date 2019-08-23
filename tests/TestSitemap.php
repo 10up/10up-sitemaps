@@ -158,7 +158,6 @@ class TestSitemap extends WP_UnitTestCase {
 		$urls  = $sitemap->get_urls();
 		$links = wp_list_pluck( $urls, 'url' );
 
-		$this->assertEquals( 2, count( $urls ) );
 		$this->assertTrue( in_array( get_term_link( $term1['term_id'] ), $links, true ) );
 		$this->assertTrue( in_array( get_term_link( $term2['term_id'] ), $links, true ) );
 	}
