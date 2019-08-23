@@ -456,7 +456,9 @@ class Sitemap {
 		for ( $i = 1; $i <= $total_pages; $i++ ) {
 			$data = array_slice( $this->urls, ( ( $i - 1 ) * $this->urls_per_page ), $this->urls_per_page );
 
+			// phpcs:disable
 			$this->log( 'Saving sitemap page ' . $i . '. Total option size is ~' . round( strlen( serialize( $data ) ) / 1024 ) . ' kilobytes.', 'debug' );
+			// phpcs:enable
 
 			update_option( 'tenup_sitemaps_page_' . $i, $data, false );
 		}
