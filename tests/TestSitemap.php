@@ -163,6 +163,39 @@ class TestSitemap extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test sitemaps writing
+	 *
+	 * @since 1.2
+	 */
+	public function testSitemapWrite() {
+		$urls = [];
+
+		for ( $i = 1; $i <= 52; $i++ ) {
+			$urls[] = [
+				'ID'  => $i,
+				'url' => 'url' . $i,
+			];
+		}
+
+		$sitemap = new Sitemap( 'all', 10, $urls );
+		$sitemap->write();
+
+		$num_pages = get_option( 'tenup_sitemaps_total_pages' );
+
+		$this->assertEquals( 6, $num_pages );
+
+		for ( $i = 1; $i <= $num_pages; $i++ ) {
+			$page = get_option( 'tenup_sitemaps_page_' . $i );
+
+			$this->assertTrue( ! empty( $page ) );
+		}
+
+		$page2 = get_option( 'tenup_sitemaps_page_2' );
+
+		$this->assertEquals( 11, $page2[0]['ID'] );
+	}
+
+	/**
 	 * Test building homepage
 	 *
 	 * @since 1.2
