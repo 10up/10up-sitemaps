@@ -1,4 +1,4 @@
-# 10up Sitemaps
+# 10up Sitemaps [![Build Status](https://travis-ci.org/10up/10up-sitemaps.svg?branch=master)](https://travis-ci.org/10up/10up-sitemaps)
 
 This is a simple sitemap plugin meant to run at scale. Sitemaps are only updated via WP-CLI. Output is saved in an option for fast reading/displaying on the front end.
 
