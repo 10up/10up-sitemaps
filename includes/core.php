@@ -111,7 +111,7 @@ function disable_canonical_redirects_for_sitemap_xml( $redirect_url, $requested_
  * @return string
  */
 function add_sitemap_robots_txt( $output ) {
-	$url = site_url( '/sitemap.xml' );
+	$url     = site_url( '/sitemap.xml' );
 	$output .= "Sitemap: {$url}\n";
 	return $output;
 }

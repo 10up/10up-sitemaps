@@ -26,9 +26,16 @@ function sitemap_setup() {
 	return true;
 }
 
+/**
+ * Ensure XML tag content is valud
+ *
+ * @param  string $string Tag content
+ * @since  1.1
+ * @return string
+ */
 function prepare_valid_xml( $string ) {
 	$string = html_entity_decode( $string );
-	$string = strip_tags( $string );
+	$string = wp_strip_all_tags( $string );
 
 	return trim( $string );
 }
