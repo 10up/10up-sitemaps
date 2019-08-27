@@ -20,8 +20,7 @@ The plugin indexes all public posts, post type archives, and public taxonomy ter
 
 ## Changelog
 
-A complete listing of all notable changes to Distributor are documented in [CHANGELOG.md](https://github.com/10up/10up-sitemaps
-/blob/develop/CHANGELOG.md).
+A complete listing of all notable changes to Distributor are documented in [CHANGELOG.md](https://github.com/10up/10up-sitemaps/blob/develop/CHANGELOG.md).
 
 ## Like what you see?
 
