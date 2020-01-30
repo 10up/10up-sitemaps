@@ -75,7 +75,7 @@ function create_rewrites() {
  * Disable Main Query when rendering sitemaps
  *
  * @param array|null $posts array of post data or null
- * @param WP_Query   $query The WP_Query instance.
+ * @param \WP_Query  $query The WP_Query instance.
  * @return  array
  */
 function disable_main_query_for_sitemap_xml( $posts, $query ) {
