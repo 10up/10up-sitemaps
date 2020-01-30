@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+- Prefix sitemap index in `robots.txt` with line feed
+
 ## [1.0.3] - 2019-08-12
 ### Fixed
 - No empty urls in sitemap
