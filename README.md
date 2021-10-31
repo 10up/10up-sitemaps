@@ -2,7 +2,7 @@
 
 > This is a simple sitemap plugin meant to run at scale. Sitemaps are only updated via WP-CLI. Output is saved in an option for fast reading/displaying on the front end.
 
-[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Build Status](https://travis-ci.org/10up/10up-sitemaps.svg?branch=master)](https://travis-ci.org/10up/10up-sitemaps) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.7%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md) 
+[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Build Status](https://travis-ci.org/10up/10up-sitemaps.svg?branch=master)](https://travis-ci.org/10up/10up-sitemaps) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.8%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md) 
 ## Setup/Usage
 
 1. Install the plugin.
