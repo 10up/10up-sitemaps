@@ -8,6 +8,7 @@
  * Author URI:  http://10up.com
  * License:     GPLv2+
  * Text Domain: tenup-sitemaps
+ * Update URI:  https://github.com/10up/10up-sitemaps
  *
  * @package  10up-sitemaps
  */
