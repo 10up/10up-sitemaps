@@ -52,6 +52,10 @@ class Command extends WP_CLI_Command {
 
 		$urls_per_page = apply_filters( 'tenup_sitemaps_urls_per_page', 200 );
 
+		if ( ! array_key_exists( 'range', $assoc_args ) ) {
+			$assoc_args['range'] = 'all';
+		}
+
 		$sitemap = new Sitemap( $assoc_args['range'], $urls_per_page, [], $logger );
 
 		$sitemap->build();
