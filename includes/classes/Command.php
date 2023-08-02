@@ -25,14 +25,11 @@ class Command extends WP_CLI_Command {
 	 *
 	 * ## OPTIONS
 	 *
-	 * [--type=<range>]
+	 * [--range]
 	 * : Range of posts to include. Either 'all' or a number of months.
 	 *
-	 * [--noprogress]
-	 * : Disables the progress list/estimator
-	 *
 	 * @subcommand generate
-	 * @synopsis [--range] [--noprogress]
+	 * @synopsis [--range]
 	 * @param array $args Positional CLI args.
 	 * @param array $assoc_args Associative CLI args.
 	 */
