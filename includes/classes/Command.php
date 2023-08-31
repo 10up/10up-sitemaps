@@ -25,14 +25,11 @@ class Command extends WP_CLI_Command {
 	 *
 	 * ## OPTIONS
 	 *
-	 * [--type=<range>]
+	 * [--range]
 	 * : Range of posts to include. Either 'all' or a number of months.
 	 *
-	 * [--noprogress]
-	 * : Disables the progress list/estimator
-	 *
 	 * @subcommand generate
-	 * @synopsis [--range] [--noprogress]
+	 * @synopsis [--range]
 	 * @param array $args Positional CLI args.
 	 * @param array $assoc_args Associative CLI args.
 	 */
@@ -51,6 +48,10 @@ class Command extends WP_CLI_Command {
 		];
 
 		$urls_per_page = apply_filters( 'tenup_sitemaps_urls_per_page', 200 );
+
+		if ( ! array_key_exists( 'range', $assoc_args ) ) {
+			$assoc_args['range'] = 'all';
+		}
 
 		$sitemap = new Sitemap( $assoc_args['range'], $urls_per_page, [], $logger );
 
