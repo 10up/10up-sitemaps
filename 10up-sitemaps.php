@@ -3,7 +3,7 @@
  * Plugin Name: 10up Sitemaps
  * Plugin URI:  http://10up.com
  * Description: Simple sitemap plugin
- * Version:     1.2
+ * Version:     1.0.4
  * Author:      Taylor Lovett, 10up
  * Author URI:  http://10up.com
  * License:     GPLv2+
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Cannot access page directly' );
 }
 
-define( 'TSM_VERSION', '1.2' );
+define( 'TSM_VERSION', '1.0.4' );
 
 /**
  * PSR-4 autoloading
