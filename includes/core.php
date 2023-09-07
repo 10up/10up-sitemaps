@@ -75,7 +75,7 @@ function create_rewrites() {
  * Disable Main Query when rendering sitemaps
  *
  * @param array|null $posts array of post data or null
- * @param WP_Query   $query The WP_Query instance.
+ * @param \WP_Query  $query The WP_Query instance.
  * @return  array
  */
 function disable_main_query_for_sitemap_xml( $posts, $query ) {
@@ -112,6 +112,6 @@ function disable_canonical_redirects_for_sitemap_xml( $redirect_url, $requested_
  */
 function add_sitemap_robots_txt( $output ) {
 	$url     = site_url( '/sitemap.xml' );
-	$output .= "Sitemap: {$url}\n";
+	$output .= "\nSitemap: {$url}\n";
 	return $output;
 }
