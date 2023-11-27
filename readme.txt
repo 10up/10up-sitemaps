@@ -27,7 +27,7 @@ The plugin indexes all public posts, post type archives, and public taxonomy ter
 == Changelog ==
 
 = 1.0.4 - 2023-09-07 =
-* Prefix sitemap index in `robots.txt` with line feed.
+* **Fixed:** Prefix sitemap index in `robots.txt` with line feed.
 
 = 1.0.3 - 2019-08-12 =
 * **Fixed:** No empty urls in sitemap.
