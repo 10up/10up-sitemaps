@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 ## [Unreleased] - TBD
 
 ## [1.0.4] - 2023-09-07
+### Fixed
 - Prefix sitemap index in `robots.txt` with line feed.
 
 ## [1.0.3] - 2019-08-12
