@@ -1,10 +1,8 @@
 === 10up Sitemaps ===
 Contributors: 10up, tlovett1, jeffpaul
 Tags: sitemap, wp-cli, cli
-Requires at least: 5.9
-Tested up to: 5.9
+Tested up to: 6.5
 Stable tag: 1.0.4
-Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
