@@ -1,10 +1,10 @@
 === 10up Sitemaps ===
 Contributors: 10up, tlovett1, jeffpaul
-Tags: sitemap, wp-cli, cli
-Tested up to: 6.5
-Stable tag: 1.0.4
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags:         sitemap, wp-cli, cli
+Tested up to: 6.6
+Stable tag:   1.0.4
+License:      GPL-2.0-or-later
+License URI:  https://spdx.org/licenses/GPL-2.0-or-later.html
 
 Simple sitemaps plugin that performs at scale.
 
