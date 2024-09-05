@@ -1,14 +1,16 @@
 # 10up Sitemaps
 
-> Simple sitemaps plugin that performs at scale. 
+![10up Sitemaps](https://github.com/10up/10up-sitemaps/blob/develop/.wordpress-org/banner-1544x500.png)
 
-[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v6.6%20tested-success.svg) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v6.6%20tested-success.svg) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md) [![Dependency Review](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml)
+
+> Simple sitemaps plugin that performs at scale.
 
 ## Overview
 
 This is a simple sitemap plugin meant to run at scale.  Sitemaps are only updated via WP-CLI.  Output is saved in an option for fast reading/displaying on the front end.
 
-## Setup/Usage
+## Usage
 
 1. Install the plugin.
 2. Run the WP-CLI command: `wp tenup-sitemaps generate`
