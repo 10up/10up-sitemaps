@@ -73,7 +73,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Sitemaps are only updated via WP-CLI.
 - Output is saved in an option for fast reading/displaying on the front end.
 
-[Unreleased]: https://github.com/10up/10up-sitemaps/compare/1.0.3...trunk
+[Unreleased]: https://github.com/10up/10up-sitemaps/compare/trunk...develop
 [1.0.5]: https://github.com/10up/10up-sitemaps/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/10up/10up-sitemaps/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/10up/10up-sitemaps/compare/1.0.2...1.0.3
