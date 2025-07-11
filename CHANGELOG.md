@@ -14,8 +14,8 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ### Changed
 
-- Bump WordPress "tested up to" version 6.8 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28)).
-- Bump WordPress minimum supported version to 6.6 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28)).
+- Bump WordPress "tested up to" version 6.8 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28), [#31](https://github.com/10up/10up-sitemaps/pull/31)).
+- Bump WordPress minimum supported version to 6.6 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28), [#31](https://github.com/10up/10up-sitemaps/pull/31)).
 
 ### Developer
 

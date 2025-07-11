@@ -25,9 +25,9 @@ The plugin indexes all public posts, post type archives, and public taxonomy ter
 == Changelog ==
 
 = 1.0.5 - 2025-07-14 =
-* **Added:** `readme.txt` file.
-* **Changed:** Bump WordPress "tested up to" version 6.8.
-* **Changed:** Bump WordPress minimum supported version to 6.6.
+* **Added:** `readme.txt` file (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#19](https://github.com/10up/10up-sitemaps/pull/19)).
+* **Changed:** Bump WordPress "tested up to" version 6.8 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28), [#31](https://github.com/10up/10up-sitemaps/pull/31)).
+* **Changed:** Bump WordPress minimum supported version to 6.6 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28), [#31](https://github.com/10up/10up-sitemaps/pull/31)).
 
 = 1.0.4 - 2023-09-07 =
 * **Fixed:** Prefix sitemap index in `robots.txt` with line feed.
