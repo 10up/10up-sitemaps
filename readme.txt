@@ -1,7 +1,7 @@
 === 10up Sitemaps ===
 Contributors: 10up, tlovett1, jeffpaul
 Tags:         sitemap, wp-cli, cli
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag:   1.0.5
 License:      GPL-2.0-or-later
 License URI:  https://spdx.org/licenses/GPL-2.0-or-later.html
@@ -23,6 +23,11 @@ You can pass `--range` to the `generate` command to only index content within a 
 The plugin indexes all public posts, post type archives, and public taxonomy term archives. For posts, images are parsed and included. Translated content needs to be manually filtered in via `tenup_sitemaps_term_translations`.
 
 == Changelog ==
+
+= 1.0.5 - 2025-07-14 =
+* **Added:** `readme.txt` file.
+* **Changed:** Bump WordPress "tested up to" version 6.8.
+* **Changed:** Bump WordPress minimum supported version to 6.6.
 
 = 1.0.4 - 2023-09-07 =
 * **Fixed:** Prefix sitemap index in `robots.txt` with line feed.
@@ -49,3 +54,9 @@ The plugin indexes all public posts, post type archives, and public taxonomy ter
 * **Added:** Initial plugin release! 🎉
 * **Added:** Sitemaps are only updated via WP-CLI.
 * **Added:** Output is saved in an option for fast reading/displaying on the front end.
+
+== Upgrade Notice ==
+
+= 1.0.5 =
+
+Note that this release bumps the WordPress minimum version from 6.3 to 6.6.
