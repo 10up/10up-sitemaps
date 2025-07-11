@@ -29,12 +29,12 @@ The `develop` branch is the development branch which means it contains the next 
 ## Release instructions
 
 1. Branch: Starting from `develop`, cut a release branch named `release/X.Y.Z` for your changes.
-2. Version bump: Bump the version number in `10up-sitemaps.php`, `readme.txt`, and any other relevant files if it does not already reflect the version being released.
+2. Version bump: Bump the version number in `10up-sitemaps.php` and `readme.txt` if it does not already reflect the version being released. Update both the plugin "Version:" property and the plugin `TSM_VERSION` constant in `10up-sitemaps.php`.
 3. Changelog: Add/update the changelog in `CHANGELOG.md` and `readme.txt`.
 4. Props: update `CREDITS.md` file with any new contributors, and confirm maintainers are accurate.
 5. New files: Check to be sure any new files/paths that are unnecessary in the production version are included in `.gitattributes` or `.distignore`.
-6. Readme updates: Make any other readme changes as necessary. `CHANGELOG.md` and `README.md` are geared toward GitHub and `readme.txt` contains WordPress.org-specific content. The two are slightly different.
-7. Merge: Make a non-fast-forward merge from your release branch to `develop` (or merge the pull request), then do the same for `develop` into `trunk`, ensuring you pull the most recent changes into `develop` first (`git checkout develop && git pull origin develop && git checkout trunk && git merge --no-ff develop`). `trunk` contains the stable development version.
+6. Readme updates: Make any other readme changes as necessary. `README.md` is geared toward GitHub and `readme.txt` contains WordPress.org-specific content. The two are slightly different.
+7. Merge: Make a non-fast-forward merge from your release branch to `develop` (or merge the pull request), then do the same for `develop` into `trunk`, ensuring you pull the most recent changes into `develop` first (`git checkout develop && git pull origin develop && git checkout trunk && git pull origin trunk && git merge --no-ff develop`). `trunk` contains the stable development version.
 8. Push: Push your `trunk` branch to GitHub (e.g. `git push origin trunk`).
 9. Compare `trunk` to `develop` to ensure no additional changes were missed. Visit https://github.com/10up/10up-sitemaps/compare/trunk...develop
 10. Test the pre-release ZIP locally by downloading it from the **Build release zip** action artifact and installing it locally. Ensure this zip has all the files we expect, that it installs and activates correctly and that all basic functionality is working.
