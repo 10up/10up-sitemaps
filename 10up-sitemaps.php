@@ -4,7 +4,7 @@
  * Plugin URI:        https://github.com/10up/10up-sitemaps
  * Description:       Simple sitemaps plugin that performs at scale.
  * Version:           1.0.5
- * Requires at least: 6.5
+ * Requires at least: 6.6
  * Requires PHP:      7.0
  * Author:            10up
  * Author URI:        https://10up.com
