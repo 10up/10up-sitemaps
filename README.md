@@ -1,14 +1,16 @@
 # 10up Sitemaps
 
-> Simple sitemaps plugin that performs at scale. 
+![10up Sitemaps](https://github.com/10up/10up-sitemaps/blob/develop/.wordpress-org/banner-1544x500.png)
 
-[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.9%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v6.8%20tested-success.svg) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md) [![Dependency Review](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml)
+
+> Simple sitemaps plugin that performs at scale.
 
 ## Overview
 
 This is a simple sitemap plugin meant to run at scale.  Sitemaps are only updated via WP-CLI.  Output is saved in an option for fast reading/displaying on the front end.
 
-## Setup/Usage
+## Usage
 
 1. Install the plugin.
 2. Run the WP-CLI command: `wp tenup-sitemaps generate`
@@ -32,4 +34,4 @@ Please read [CODE_OF_CONDUCT.md](https://github.com/10up/10up-sitemaps/blob/deve
 
 ## Like what you see?
 
-<a href="http://10up.com/contact/"><img src="https://10up.com/uploads/2016/10/10up-Github-Banner.png" width="850" alt="Work with us at 10up"></a>
+<a href="http://10up.com/contact/"><img src="https://github.com/10up/.github/blob/trunk/profile/10up-github-banner.jpg" width="850" alt="Work with the 10up WordPress Practice at Fueled"></a>

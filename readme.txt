@@ -1,0 +1,62 @@
+=== 10up Sitemaps ===
+Contributors: 10up, tlovett1, jeffpaul
+Tags:         sitemap, wp-cli, cli
+Tested up to: 6.8
+Stable tag:   1.0.5
+License:      GPL-2.0-or-later
+License URI:  https://spdx.org/licenses/GPL-2.0-or-later.html
+
+Simple sitemaps plugin that performs at scale.
+
+== Description ==
+
+This is a simple sitemap plugin meant to run at scale. Sitemaps are only updated via WP-CLI. Output is saved in an option for fast reading/displaying on the front end.
+
+== Setup/Usage ==
+
+1. Install the plugin.
+2. Run the WP-CLI command: `wp tenup-sitemaps generate`
+3. Add WP-CLI command to cron job. For multisite, add a command for each site in the network.
+
+You can pass `--range` to the `generate` command to only index content within a certain age range. `wp tenup-sitemaps generate --range=12` would only index content created/updated within the last 12 months.
+
+The plugin indexes all public posts, post type archives, and public taxonomy term archives. For posts, images are parsed and included. Translated content needs to be manually filtered in via `tenup_sitemaps_term_translations`.
+
+== Changelog ==
+
+= 1.0.5 - 2025-07-14 =
+* **Added:** `readme.txt` file (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#19](https://github.com/10up/10up-sitemaps/pull/19)).
+* **Changed:** Bump WordPress "tested up to" version 6.8 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28), [#31](https://github.com/10up/10up-sitemaps/pull/31)).
+* **Changed:** Bump WordPress minimum supported version to 6.6 (props [@jeffpaul](https://github.com/jeffpaul), [@sudip-md](https://github.com/sudip-md), [@colinswinney](https://github.com/colinswinney), [@dkotter](https://github.com/dkotter) via [#22](https://github.com/10up/10up-sitemaps/pull/22), [#24](https://github.com/10up/10up-sitemaps/pull/24), [#28](https://github.com/10up/10up-sitemaps/pull/28), [#31](https://github.com/10up/10up-sitemaps/pull/31)).
+
+= 1.0.4 - 2023-09-07 =
+* **Fixed:** Prefix sitemap index in `robots.txt` with line feed.
+
+= 1.0.3 - 2019-08-12 =
+* **Fixed:** No empty urls in sitemap.
+
+= 1.0.2 - 2019-08-05 =
+* **Added:** WordPress Plugin type.
+
+= 1.0.1 - 2019-08-05 =
+* **Changed:** Package name.
+* **Fixed:** Log url properly.
+
+= 1.0.0 - 2019-08-01 =
+* **Added:** Homepage and post type archive.
+* **Added:** Progress estimator.
+* **Added:** `stop_the_insanity()` calls.
+* **Added:** `robots_txt` filter to include the `sitemap.xml` file.
+* **Added:** Page link filter.
+* **Removed:** `changefrew` and `priority` from template.
+
+= 0.1.0 - 2019-06-26 =
+* **Added:** Initial plugin release! 🎉
+* **Added:** Sitemaps are only updated via WP-CLI.
+* **Added:** Output is saved in an option for fast reading/displaying on the front end.
+
+== Upgrade Notice ==
+
+= 1.0.5 =
+
+Note that this release bumps the WordPress minimum version from 6.3 to 6.6.

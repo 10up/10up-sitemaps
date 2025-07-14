@@ -3,13 +3,13 @@
  * Plugin Name:       10up Sitemaps
  * Plugin URI:        https://github.com/10up/10up-sitemaps
  * Description:       Simple sitemaps plugin that performs at scale.
- * Version:           1.0.4
- * Requires at least: 5.9
+ * Version:           1.0.5
+ * Requires at least: 6.6
  * Requires PHP:      7.0
  * Author:            10up
  * Author URI:        https://10up.com
- * License:           GPL v2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License:           GPL-2.0-or-later
+ * License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
  * Text Domain:       tenup-sitemaps
  * Update URI:        https://github.com/10up/10up-sitemaps
  *
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Cannot access page directly' );
 }
 
-define( 'TSM_VERSION', '1.0.4' );
+define( 'TSM_VERSION', '1.0.5' );
 
 /**
  * PSR-4 autoloading
