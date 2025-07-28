@@ -20,8 +20,64 @@
       }
     },
     {
+      "step": "wp-cli",
+      "command": "wp post create --post_title='Welcome to Our Demo Site' --post_content='This is a sample post showcasing the 10up Sitemaps plugin functionality. The sitemap will include this post along with other content types.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_title='Getting Started with WordPress' --post_content='Learn the basics of WordPress and how to get your site up and running quickly with our comprehensive guide.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_title='SEO Best Practices' --post_content='Discover the essential SEO techniques that will help your WordPress site rank better in search engines.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp page create --post_title='About Us' --post_content='Learn more about our company and what we do.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp page create --post_title='Contact' --post_content='Get in touch with us for any questions or support.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp page create --post_title='Services' --post_content='Explore the services we offer to help grow your business.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Technology' --description='Technology related content'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Business' --description='Business related content'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Marketing' --description='Marketing related content'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'WordPress'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'SEO'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'Demo'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'Sitemap'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp rewrite flush"
+    },
+    {
       "step": "runPHP",
-      "code": "<?php\n// Create sample content for the sitemap demo\n$sample_posts = array(\n    array(\n        'title' => 'Welcome to Our Demo Site',\n        'content' => 'This is a sample post showcasing the 10up Sitemaps plugin functionality. The sitemap will include this post along with other content types.'\n    ),\n    array(\n        'title' => 'Getting Started with WordPress',\n        'content' => 'Learn the basics of WordPress and how to get your site up and running quickly with our comprehensive guide.'\n    ),\n    array(\n        'title' => 'SEO Best Practices',\n        'content' => 'Discover the essential SEO techniques that will help your WordPress site rank better in search engines.'\n    )\n);\n\nforeach ($sample_posts as $post_data) {\n    wp_insert_post(array(\n        'post_title'    => $post_data['title'],\n        'post_content'  => $post_data['content'],\n        'post_status'   => 'publish',\n        'post_author'   => 1,\n        'post_type'     => 'post'\n    ));\n}\n\n// Create sample pages\n$sample_pages = array(\n    array(\n        'title' => 'About Us',\n        'content' => 'Learn more about our company and what we do.'\n    ),\n    array(\n        'title' => 'Contact',\n        'content' => 'Get in touch with us for any questions or support.'\n    ),\n    array(\n        'title' => 'Services',\n        'content' => 'Explore the services we offer to help grow your business.'\n    )\n);\n\nforeach ($sample_pages as $page_data) {\n    wp_insert_post(array(\n        'post_title'    => $page_data['title'],\n        'post_content'  => $page_data['content'],\n        'post_status'   => 'publish',\n        'post_author'   => 1,\n        'post_type'     => 'page'\n    ));\n}\n\n// Create categories\n$categories = array('Technology', 'Business', 'Marketing');\nforeach ($categories as $cat_name) {\n    wp_create_category($cat_name);\n}\n\n// Create tags\n$tags = array('WordPress', 'SEO', 'Demo', 'Sitemap');\nforeach ($tags as $tag_name) {\n    wp_insert_term($tag_name, 'post_tag');\n}\n\n// Flush rewrite rules to ensure sitemap URLs work properly\nflush_rewrite_rules();\n\n// Generate the sitemap using the plugin's functionality\nif (function_exists('tenup_sitemaps_generate_sitemap')) {\n    tenup_sitemaps_generate_sitemap();\n} elseif (class_exists('TenUp\\Sitemaps\\Sitemaps')) {\n    $sitemaps = new TenUp\\Sitemaps\\Sitemaps();\n    if (method_exists($sitemaps, 'generate_sitemap')) {\n        $sitemaps->generate_sitemap();\n    }\n}\n\n// Also try to trigger sitemap generation via WordPress hooks\nif (function_exists('do_action')) {\n    do_action('tenup_sitemaps_generate_sitemap');\n}\n?>"
+      "code": "<?php\n// Generate the sitemap using the plugin's functionality\nif (function_exists('tenup_sitemaps_generate_sitemap')) {\n    tenup_sitemaps_generate_sitemap();\n} elseif (class_exists('TenUp\\Sitemaps\\Sitemaps')) {\n    $sitemaps = new TenUp\\Sitemaps\\Sitemaps();\n    if (method_exists($sitemaps, 'generate_sitemap')) {\n        $sitemaps->generate_sitemap();\n    }\n}\n\n// Also try to trigger sitemap generation via WordPress hooks\nif (function_exists('do_action')) {\n    do_action('tenup_sitemaps_generate_sitemap');\n}\n?>"
     }
   ]
 }
