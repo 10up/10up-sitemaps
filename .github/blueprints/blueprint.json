@@ -33,15 +33,15 @@
     },
     {
       "step": "wp-cli",
-      "command": "wp page create --post_title='About Us' --post_content='Learn more about our company and what we do.' --post_status=publish --post_author=1"
+      "command": "wp post create --post_type=page --post_title='About Us' --post_content='Learn more about our company and what we do.' --post_status=publish --post_author=1"
     },
     {
       "step": "wp-cli",
-      "command": "wp page create --post_title='Contact' --post_content='Get in touch with us for any questions or support.' --post_status=publish --post_author=1"
+      "command": "wp post create --post_type=page --post_title='Contact' --post_content='Get in touch with us for any questions or support.' --post_status=publish --post_author=1"
     },
     {
       "step": "wp-cli",
-      "command": "wp page create --post_title='Services' --post_content='Explore the services we offer to help grow your business.' --post_status=publish --post_author=1"
+      "command": "wp post create --post_type=page --post_title='Services' --post_content='Explore the services we offer to help grow your business.' --post_status=publish --post_author=1"
     },
     {
       "step": "wp-cli",
