@@ -76,8 +76,8 @@
       "command": "wp rewrite flush"
     },
     {
-      "step": "runPHP",
-      "code": "<?php\n// Generate the sitemap using the plugin's functionality\nif (function_exists('tenup_sitemaps_generate_sitemap')) {\n    tenup_sitemaps_generate_sitemap();\n} elseif (class_exists('TenUp\\Sitemaps\\Sitemaps')) {\n    $sitemaps = new TenUp\\Sitemaps\\Sitemaps();\n    if (method_exists($sitemaps, 'generate_sitemap')) {\n        $sitemaps->generate_sitemap();\n    }\n}\n\n// Also try to trigger sitemap generation via WordPress hooks\nif (function_exists('do_action')) {\n    do_action('tenup_sitemaps_generate_sitemap');\n}\n?>"
+      "step": "wp-cli",
+      "command": "wp tenup-sitemaps generate"
     }
   ]
 }
