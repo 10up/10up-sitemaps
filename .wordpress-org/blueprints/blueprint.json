@@ -1,0 +1,83 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/sitemap.xml",
+  "preferredVersions": {
+    "php": "7.4",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://github-proxy.com/proxy/?repo=10up/10up-sitemaps&branch=trunk"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_title='Welcome to Our Demo Site' --post_content='This is a sample post showcasing the 10up Sitemaps plugin functionality. The sitemap will include this post along with other content types.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_title='Getting Started with WordPress' --post_content='Learn the basics of WordPress and how to get your site up and running quickly with our comprehensive guide.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_title='SEO Best Practices' --post_content='Discover the essential SEO techniques that will help your WordPress site rank better in search engines.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --post_title='About Us' --post_content='Learn more about our company and what we do.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --post_title='Contact' --post_content='Get in touch with us for any questions or support.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp post create --post_type=page --post_title='Services' --post_content='Explore the services we offer to help grow your business.' --post_status=publish --post_author=1"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Technology' --description='Technology related content'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Business' --description='Business related content'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create category 'Marketing' --description='Marketing related content'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'WordPress'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'SEO'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'Demo'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp term create post_tag 'Sitemap'"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp rewrite flush"
+    },
+    {
+      "step": "wp-cli",
+      "command": "wp tenup-sitemaps generate"
+    }
+  ]
+}
