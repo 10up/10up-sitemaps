@@ -2,9 +2,12 @@
 
 ![10up Sitemaps](https://github.com/10up/10up-sitemaps/blob/develop/.wordpress-org/banner-1544x500.png)
 
-[![Support Level](https://img.shields.io/badge/support-stable-blue.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v6.8%20tested-success.svg) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md) [![Dependency Review](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml) [![WordPress Playground Demo](https://img.shields.io/badge/Playground_Demo-8A2BE2?logo=wordpress&logoColor=FFFFFF&labelColor=3858E9&color=3858E9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/10up/10up-sitemaps/develop/.wordpress-org/blueprints/blueprint.json)
-
 > Simple sitemaps plugin that performs at scale.
+
+[![Support Level](https://img.shields.io/badge/support-archived-red.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v6.8%20tested-success.svg) [![GPL-2.0-or-later License](https://img.shields.io/github/license/10up/10up-sitemaps.svg)](https://github.com/10up/10up-sitemaps/blob/develop/LICENSE.md) [![Dependency Review](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/10up/10up-sitemaps/actions/workflows/dependency-review.yml) [![WordPress Playground Demo](https://img.shields.io/badge/Playground_Demo-8A2BE2?logo=wordpress&logoColor=FFFFFF&labelColor=3858E9&color=3858E9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/10up/10up-sitemaps/develop/.wordpress-org/blueprints/blueprint.json)
+
+> [!CAUTION]
+> As of 13 February 2026, this project is archived and no longer being actively maintained.
 
 ## Overview
 
@@ -28,7 +31,7 @@ Please report security bugs found in the source code of the undefined plugin thr
 
 ## Support Level
 
-**Stable:** 10up is not planning to develop any new features for this, but will still respond to bug reports and security concerns. We welcome PRs, but any that include new features should be small and easy to integrate and should not include breaking changes. We otherwise intend to keep this tested up to the most recent version of WordPress.
+**Archived:** This project is no longer maintained by 10up. We are no longer responding to Issues or Pull Requests unless they relate to security concerns. We encourage interested developers to fork this project and make it their own!
 
 ## Changelog
 
