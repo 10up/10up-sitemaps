@@ -26,5 +26,6 @@
     "lint-fix": "phpcbf .",
     "test": "phpunit",
     "setup-local-tests": "bash bin/install-wp-tests.sh tsm_wp_test root password mysql latest true"
-  }
+  },
+  "abandoned": true
 }
